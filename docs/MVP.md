@@ -1,31 +1,49 @@
-Micro-RTS MVP requirements
+# MicroRTS MVP (Option 1)
 
-Top-down 2D (or simple 3D) map: 1 map only
+## Goal
+A playable micro-RTS prototype on a single map: the player can select units, move, attack, build units from one building, and defeat an AI opponent.
 
-Units: Worker, Soldier, Tank (3 types max)
+## Scope (MUST HAVE)
+### Game
+- One map (single scene) with two bases: Player and AI
+- Win/Lose condition: base destroyed
 
-Player actions:
+### Units
+- 3 unit types max: Worker, Soldier, Tank
+- Teams: Player vs AI
+- Stats: HP, move speed, attack range, attack damage, attack cooldown
 
-Box select + click move
+### Player Controls
+- Left click selects a unit
+- Drag box selects multiple units
+- Right click on ground issues move command
+- Right click on enemy issues attack command
+- No formations required
 
-Click enemy to attack
+### Economy
+- Resource counter that increases by a fixed amount per second
+- Units have a cost
+- One production building per team (Base)
 
-Build units from one building
+### UI
+- Resource count
+- Selected unit count
+- Buttons to build Soldier and Tank
+- Win/Lose screen with Restart
 
-Economy: resource trickle (no workers gathering; keep it simple)
+### AI Opponent (simple)
+- Accumulates resources
+- Builds units periodically (within budget)
+- Attacks player base after it has N units
+- No cheating beyond resource trickle
 
-AI opponent:
-
-Periodically builds units
-
-Attacks after threshold
-
-If base destroyed -> loses
-
-UI: resource count, selected unit count, build buttons, win/lose screen
-
-Save/load: none
-
-Fog-of-war: none
-
-Multiplayer: none
+## Explicitly OUT OF SCOPE (DO NOT IMPLEMENT)
+- Multiplayer
+- Fog of war
+- Worker gathering/mining/returning resources
+- Tech tree / upgrades
+- More than 1 map
+- Advanced pathfinding beyond a simple approach (no navmesh tooling)
+- Formations, flanking, squad tactics
+- Save/load
+- In-game map editor
